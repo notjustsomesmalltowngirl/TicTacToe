@@ -86,10 +86,8 @@ def get_computer_play():
             return
         computer_tic = 'o' if user_tic == 'x' else 'x'
         computer_play = random.choice(list(available_grids.keys()))
-        position_tics(canvas, computer_tic, available_grids[computer_play][0][0],
-                          available_grids[computer_play][0][1],
-                          available_grids[computer_play][1][0],
-                          available_grids[computer_play][1][1])
+        ((x1, y1), (x2, y2)) = available_grids[computer_play]
+        position_tics(canvas, computer_tic, x1, y1, x2, y2)
         OCCUPIED_GRIDS.append({computer_tic: computer_play})
         check_win(canvas, OCCUPIED_GRIDS, grid)
 
