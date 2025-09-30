@@ -1,5 +1,4 @@
 import tkinter as tk
-import time
 import random
 from PIL import Image, ImageTk
 
@@ -133,7 +132,7 @@ root.resizable(False, False)
 pil_image = Image.open('images/TicTacToe.jpg').convert('RGBA')
 
 tk_image = ImageTk.PhotoImage(pil_image)
-canvas = tk.Canvas(root, width=WIDTH, height=HEIGHT)
+canvas = tk.Canvas(root, width=WIDTH, height=HEIGHT, highlightthickness=0)
 canvas.create_image(0, 0, anchor="nw", image=tk_image)
 
 canvas.place(x=0, y=0, relwidth=1, relheight=1)
