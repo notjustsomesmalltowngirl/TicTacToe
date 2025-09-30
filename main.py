@@ -128,14 +128,15 @@ root = tk.Tk()
 # setting up display
 root.title("TicTacToe")
 root.geometry(f"{HEIGHT}x{WIDTH}")
+root.resizable(False, False)
 
 pil_image = Image.open('images/TicTacToe.jpg').convert('RGBA')
 
 tk_image = ImageTk.PhotoImage(pil_image)
 canvas = tk.Canvas(root, width=WIDTH, height=HEIGHT)
-canvas.place(x=0, y=0, relwidth=1, relheight=1)
 canvas.create_image(0, 0, anchor="nw", image=tk_image)
 
+canvas.place(x=0, y=0, relwidth=1, relheight=1)
 
 setup_game(canvas)
 root.mainloop()
